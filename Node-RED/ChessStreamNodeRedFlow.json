@@ -1,0 +1,533 @@
+[
+    {
+        "id": "6876b6f51a74c211",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "8e40cf32d2fed40a",
+        "type": "function",
+        "z": "6876b6f51a74c211",
+        "name": "Format Payload for Commentary",
+        "func": "var mqtt_input = msg.payload;\nvar concatenatedString = \"Based on the FEN summary, provide sassy comments on the game using less than 100 words: \" + mqtt_input;\n\nmsg.payload = {\n    \"model\": \"gpt-4\",\n    \"messages\": [{\"role\": \"user\", \"content\": concatenatedString}],\n    \"temperature\": 0.7\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 340,
+        "wires": [
+            [
+                "1044d95cf0c403dd"
+            ]
+        ]
+    },
+    {
+        "id": "1044d95cf0c403dd",
+        "type": "http request",
+        "z": "6876b6f51a74c211",
+        "name": "Call ChatGPT API",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.openai.com/v1/chat/completions",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "Content-Type",
+                "valueType": "other",
+                "valueValue": "application/json"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "Authorization",
+                "valueType": "other",
+                "valueValue": "Bearer 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"
+            }
+        ],
+        "x": 670,
+        "y": 340,
+        "wires": [
+            [
+                "b88e7c54efce30e9"
+            ]
+        ]
+    },
+    {
+        "id": "154fc6e5bfb8e672",
+        "type": "debug",
+        "z": "6876b6f51a74c211",
+        "name": "Commentary",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1090,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "bba5a94ddccc226b",
+        "type": "http request",
+        "z": "6876b6f51a74c211",
+        "name": "Call StockFish API",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "body",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 570,
+        "y": 420,
+        "wires": [
+            [
+                "73e0e7e29174f5af"
+            ]
+        ]
+    },
+    {
+        "id": "b88e7c54efce30e9",
+        "type": "function",
+        "z": "6876b6f51a74c211",
+        "name": "Parse Commentary",
+        "func": "var contentValue = msg.payload.choices[0].message.content;\nmsg.payload = contentValue;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 340,
+        "wires": [
+            [
+                "7e63695263c7ee20",
+                "154fc6e5bfb8e672"
+            ]
+        ]
+    },
+    {
+        "id": "23c5d118cb2c81e1",
+        "type": "mqtt in",
+        "z": "6876b6f51a74c211",
+        "name": "Chess Input",
+        "topic": "Chess_Input",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "8fde701c.6c6c3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 260,
+        "wires": [
+            [
+                "30f5b626e0836811",
+                "f3e1c1fc2d8c3747"
+            ]
+        ]
+    },
+    {
+        "id": "30f5b626e0836811",
+        "type": "function",
+        "z": "6876b6f51a74c211",
+        "name": "Message Parser",
+        "func": "if (msg.payload) {\n    // If the payload exists, pass it through\n    return msg;\n} else {\n    // If the payload is missing, log an error and return null\n    node.error(\"Invalid MQTT message. Payload is missing.\");\n    return null;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 260,
+        "wires": [
+            [
+                "6faaa6249cca430e"
+            ]
+        ]
+    },
+    {
+        "id": "f3e1c1fc2d8c3747",
+        "type": "debug",
+        "z": "6876b6f51a74c211",
+        "name": "Chess input",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 350,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "2dab15587c55516f",
+        "type": "mqtt in",
+        "z": "6876b6f51a74c211",
+        "name": "",
+        "topic": "FEN_String",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "8fde701c.6c6c3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 90,
+        "y": 420,
+        "wires": [
+            [
+                "2ac9ec346dd9eda2",
+                "93bea82cfa094ee0",
+                "8e40cf32d2fed40a"
+            ]
+        ]
+    },
+    {
+        "id": "dc489a9ed141b0d1",
+        "type": "debug",
+        "z": "6876b6f51a74c211",
+        "name": "StockFish Output",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 810,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "93bea82cfa094ee0",
+        "type": "debug",
+        "z": "6876b6f51a74c211",
+        "name": "mqtt input",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 330,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "2ac9ec346dd9eda2",
+        "type": "function",
+        "z": "6876b6f51a74c211",
+        "name": "Parsing MSG",
+        "func": "// Extract the incoming string from the MQTT message\nvar fen_string = msg.payload; // Assuming the string is in msg.payload\n\n// Modify the string as needed to form the URL\n// For example, let's say you want to append the string to a base URL\nvar baseURLStart = \"https://stockfish.online/api/stockfish.php?fen=\"; // Your base URL\nvar baseURLEnd = \"&depth=5&mode=bestmove\"\nvar modifiedURL = baseURLStart + fen_string + baseURLEnd;\n\n// Store the modified URL in msg.url for use in the HTTP request node\nmsg.url = modifiedURL;\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 420,
+        "wires": [
+            [
+                "bba5a94ddccc226b"
+            ]
+        ]
+    },
+    {
+        "id": "10a9b92593aaed83",
+        "type": "debug",
+        "z": "6876b6f51a74c211",
+        "name": "Best Move",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1090,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "73e0e7e29174f5af",
+        "type": "function",
+        "z": "6876b6f51a74c211",
+        "name": "Parse Best Move",
+        "func": "// Assuming msg.payload contains the string output\nvar jsonString = msg.payload;\n\n// Parse the JSON string to an object\nvar parsedObject = JSON.parse(jsonString);\n\n// Extract the 'bestmove' value\nvar data = parsedObject.data.split(' ')[1]; // Extracting \"b1c3\"\n\n// Create a new message with the extracted value as the payload\nmsg.payload = data;\n\n// Return the modified message for further processing or output\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 810,
+        "y": 420,
+        "wires": [
+            [
+                "e349cf0121e19f38",
+                "022a85903fb84de7",
+                "10a9b92593aaed83"
+            ]
+        ]
+    },
+    {
+        "id": "e349cf0121e19f38",
+        "type": "mqtt out",
+        "z": "6876b6f51a74c211",
+        "name": "Chess Best Move",
+        "topic": "Chess_Best_Move",
+        "qos": "2",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8fde701c.6c6c3",
+        "x": 1110,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "022a85903fb84de7",
+        "type": "ui_text",
+        "z": "6876b6f51a74c211",
+        "group": "4a3bc3fb58f05678",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Best Next Move",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1100,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "7e63695263c7ee20",
+        "type": "ui_text",
+        "z": "6876b6f51a74c211",
+        "group": "4a3bc3fb58f05678",
+        "order": 13,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Chess Commentary",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1120,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "6faaa6249cca430e",
+        "type": "ui_template",
+        "z": "6876b6f51a74c211",
+        "group": "4a3bc3fb58f05678",
+        "name": "Chessboard GUI",
+        "order": 3,
+        "width": 5,
+        "height": 5,
+        "format": "<link rel=\"stylesheet\" href=\"https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css\">\n\n\n<script src=\"https://code.jquery.com/jquery-3.5.1.min.js\">\n</script>\n\n<script src=\"https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js\">\n</script>\n\n<div id=\"board1\" style=\"width: 450px\"></div>\n\n<script>\n\n(function (scope) {\n    // Check if chessboard.js library is loaded\n    var timer = setInterval(function () {\n        if (!window.Chessboard) return;\n        clearInterval(timer);\n\n        // Initialize Chessboard\n        var board = Chessboard('board1', {\n            draggable: false,\n            position: 'start',\n            pieceTheme: 'http://172.203.132.103/img/chesspieces/wikipedia/{piece}.png',\n        });\n\n        // Watch for changes in the 'msg' property\n        scope.$watch('msg', function (msg) {\n            if (msg) {\n                // Assuming the payload contains a move notation property, adjust this based on your actual message structure\n                var moveNotation = msg.payload;\n\n                // Check if move notation is valid before updating the board\n                if (isValidMoveNotation(moveNotation)) {\n                    // Update the chessboard with the received move\n                    board.move(moveNotation);\n                    board.position(board.fen(), true);\n                }\n            }\n        });\n\n        // Function to check if the move notation is valid (customize as needed)\n        var isValidMoveNotation = function (moveNotation) {\n            // Add your validation logic here\n            // For simplicity, assuming all move notations are valid in this example\n            return true;\n        };\n\n    }, 100); // Check every 100 milliseconds for chessboard.js library\n})(scope);\n\n\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 590,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4b14bbe1fa09241f",
+        "type": "ui_spacer",
+        "z": "6876b6f51a74c211",
+        "name": "spacer",
+        "group": "4a3bc3fb58f05678",
+        "order": 2,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "1fbace2cffe45b49",
+        "type": "ui_spacer",
+        "z": "6876b6f51a74c211",
+        "name": "spacer",
+        "group": "4a3bc3fb58f05678",
+        "order": 4,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "26b1b5492dac5d86",
+        "type": "ui_spacer",
+        "z": "6876b6f51a74c211",
+        "name": "spacer",
+        "group": "4a3bc3fb58f05678",
+        "order": 5,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "24afad540e04dfea",
+        "type": "ui_spacer",
+        "z": "6876b6f51a74c211",
+        "name": "spacer",
+        "group": "4a3bc3fb58f05678",
+        "order": 6,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "0a3f447d24aef7bc",
+        "type": "ui_spacer",
+        "z": "6876b6f51a74c211",
+        "name": "spacer",
+        "group": "4a3bc3fb58f05678",
+        "order": 7,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "41b2f318a7295623",
+        "type": "ui_spacer",
+        "z": "6876b6f51a74c211",
+        "name": "spacer",
+        "group": "4a3bc3fb58f05678",
+        "order": 8,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "751ffc2cc5b54c26",
+        "type": "ui_spacer",
+        "z": "6876b6f51a74c211",
+        "name": "spacer",
+        "group": "4a3bc3fb58f05678",
+        "order": 9,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "5bab8c7e672d85eb",
+        "type": "ui_spacer",
+        "z": "6876b6f51a74c211",
+        "name": "spacer",
+        "group": "4a3bc3fb58f05678",
+        "order": 10,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "38de88f933945eca",
+        "type": "ui_spacer",
+        "z": "6876b6f51a74c211",
+        "name": "spacer",
+        "group": "4a3bc3fb58f05678",
+        "order": 11,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "1034a636bda59edd",
+        "type": "ui_spacer",
+        "z": "6876b6f51a74c211",
+        "name": "spacer",
+        "group": "4a3bc3fb58f05678",
+        "order": 12,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "8fde701c.6c6c3",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "172.203.132.103",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "compatmode": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "4a3bc3fb58f05678",
+        "type": "ui_group",
+        "name": "Chesstream Live Display",
+        "tab": "c19ddfcf.06e82",
+        "order": 1,
+        "disp": true,
+        "width": 9,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c19ddfcf.06e82",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]

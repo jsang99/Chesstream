@@ -1,0 +1,318 @@
+T9790 5055:132.343   SEGGER J-Link V7.94a Log File
+T9790 5055:132.431   DLL Compiled: Dec  6 2023 16:01:39
+T9790 5055:132.453   Logging started @ 2023-12-17 03:54
+T9790 5055:132.473   Process: C:\Program Files (x86)\Atmel\Studio\7.0\atbackend\atbackend.exe
+T9790 5055:132.497 - 9838.609ms
+T9790 5055:136.681 JLINK_ExecCommand("Device = ATSAMD21G18A", ...). 
+T9790 5055:137.163   Device "ATSAMD21G18A" selected.
+T9790 5055:137.678 - 0.838ms returns 0x00
+T9790 5055:300.732 JLINK_TIF_Select(JLINKARM_TIF_SWD)
+T9790 5055:303.233 - 2.501ms returns 0x00
+T9790 5055:305.730 JLINK_SetSpeed(4000)
+T9790 5055:306.120 - 0.391ms
+T9790 5055:306.163 JLINK_ResetPullsRESET(OFF)
+T9790 5055:306.183 - 0.020ms
+T9790 5055:306.204 JLINK_Connect()
+T9790 5055:327.925   InitTarget() start
+T9790 5055:333.025    J-Link Script File: Executing InitTarget()
+T9790 5055:333.108   InitTarget()
+T9790 5055:338.716   InitTarget() end - Took 5.63ms
+T9790 5055:340.125   Found SW-DP with ID 0x0BC11477
+T9790 5055:343.967   DPIDR: 0x0BC11477
+T9790 5055:344.005   CoreSight SoC-400 or earlier
+T9790 5055:344.028   Scanning AP map to find all available APs
+T9790 5055:345.207   AP[1]: Stopped AP scan as end of AP map has been reached
+T9790 5055:345.233   AP[0]: AHB-AP (IDR: 0x04770031)
+T9790 5055:345.251   Iterating through AP map to find AHB-AP to use
+T9790 5055:346.670   AP[0]: Core found
+T9790 5055:346.699   AP[0]: AHB-AP ROM base: 0x41003000
+T9790 5055:347.442   CPUID register: 0x410CC601. Implementer code: 0x41 (ARM)
+T9790 5055:347.469   Found Cortex-M0 r0p1, Little endian.
+T9790 5055:348.327   -- Max. mem block: 0x00002B08
+T9790 5055:349.194   CPU_ReadMem(4 bytes @ 0xE000EDF0)
+T9790 5055:349.815   CPU_WriteMem(4 bytes @ 0xE000EDF0)
+T9790 5055:350.417   CPU_ReadMem(4 bytes @ 0xE0002000)
+T9790 5055:351.048   FPUnit: 4 code (BP) slots and 0 literal slots
+T9790 5055:351.067   CPU_ReadMem(4 bytes @ 0xE000EDFC)
+T9790 5055:351.669   CPU_WriteMem(4 bytes @ 0xE000EDFC)
+T9790 5055:352.320   CPU_ReadMem(4 bytes @ 0xE0001000)
+T9790 5055:352.937   CPU_WriteMem(4 bytes @ 0xE0001000)
+T9790 5055:353.670   CoreSight components:
+T9790 5055:353.716   ROMTbl[0] @ 41003000
+T9790 5055:353.728   CPU_ReadMem(64 bytes @ 0x41003000)
+T9790 5055:354.845   CPU_ReadMem(32 bytes @ 0xE00FFFE0)
+T9790 5055:355.809   [0][0]: E00FF000 CID B105100D PID 000BB4C0 ROM Table
+T9790 5055:355.866   ROMTbl[1] @ E00FF000
+T9790 5055:355.880   CPU_ReadMem(64 bytes @ 0xE00FF000)
+T9790 5055:356.860   CPU_ReadMem(32 bytes @ 0xE000EFE0)
+T9790 5055:357.704   [1][0]: E000E000 CID B105E00D PID 000BB008 SCS
+T9790 5055:357.724   CPU_ReadMem(32 bytes @ 0xE0001FE0)
+T9790 5055:358.512   [1][1]: E0001000 CID B105E00D PID 000BB00A DWT
+T9790 5055:358.528   CPU_ReadMem(32 bytes @ 0xE0002FE0)
+T9790 5055:359.348   [1][2]: E0002000 CID B105E00D PID 000BB00B FPB
+T9790 5055:359.364   CPU_ReadMem(32 bytes @ 0x41006FE0)
+T9790 5055:360.119   [0][1]: 41006000 CID B105900D PID 001BB932 MTB-M0+
+T9790 5055:360.143 - 53.939ms returns 0x00
+T9790 5055:360.203 JLINK_ExecCommand("ExcludeFlashCacheRange 0x0 - 0x40000", ...). 
+T9790 5055:360.214 - 0.001ms returns 0x00
+T9790 5055:360.234 JLINK_Halt()
+T9790 5055:363.535 - 3.299ms returns 0x00
+T9790 5055:365.027 JLINK_JTAG_GetDeviceID(DeviceIndex = 0)
+T9790 5055:365.044 - 0.017ms returns 0
+T9790 5055:365.054 JLINK_ReadMemU32(0x41002018, 0x1 Items)
+T9790 5055:365.079   CPU_ReadMem(4 bytes @ 0x41002018)
+T9790 5055:365.716   Data:  05 03 01 10
+T9790 5055:365.732 - 0.677ms returns 1 (0x1)
+T12AEC 5055:378.384 JLINK_IsHalted()
+T12AEC 5055:379.214 - 0.829ms returns TRUE
+T12AEC 5055:379.243 JLINK_GetMOEs(...)
+T12AEC 5055:379.259   CPU_ReadMem(4 bytes @ 0xE000ED30)
+T12AEC 5055:379.835 - 0.591ms returns 0x01
+T12AEC 5055:379.863 JLINK_ReadReg(R15 (PC))
+T12AEC 5055:379.878 - 0.014ms returns 0x00002530
+T9790 5055:411.275 JLINK_BeginDownload(Flags = 0x00000000)
+T9790 5055:411.322 - 0.047ms
+T9790 5055:411.354 JLINK_WriteMem(0x00000000, 0x7CB0 Bytes, ...)
+T9790 5055:411.368   Data:  08 2E 00 20 51 35 00 00 4D 35 00 00 4D 35 00 00 ...
+T9790 5055:411.790   completely In flash
+T9790 5055:412.256 - 0.900ms returns 0x7CB0
+T9790 5055:412.502 JLINK_WriteMem(0x00007CB0, 0xC4 Bytes, ...)
+T9790 5055:412.515   Data:  40 1F 00 00 08 00 00 00 07 01 00 00 30 3A 46 6C ...
+T9790 5055:412.533   completely In flash
+T9790 5055:412.545 - 0.043ms returns 0xC4
+T12AEC 5055:583.259 JLINK_IsHalted()
+T12AEC 5055:583.402 - 0.140ms returns TRUE
+T9790 5055:584.994 JLINK_EndDownload()
+T9790 5055:585.535   CPU_ReadMem(4 bytes @ 0x41006004)
+T9790 5055:586.217   CPU_ReadMem(4 bytes @ 0xE000ED90)
+T9790 5055:586.913    -- --------------------------------------
+T9790 5055:586.945    -- Flash bank @ 0x00000000: Default: L2 verify disabled because algorithm performs L1 verify
+T9790 5055:586.961    -- Start of determining dirty areas in flash cache
+T9790 5055:586.979    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00000000 if necessary
+T9790 5055:586.996    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00000100 if necessary
+T9790 5055:587.013    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00000200 if necessary
+T9790 5055:587.029    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00000300 if necessary
+T9790 5055:587.046    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00000400 if necessary
+T9790 5055:587.062    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00000500 if necessary
+T9790 5055:587.078    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00000600 if necessary
+T9790 5055:587.095    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00000700 if necessary
+T9790 5055:587.111    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00000800 if necessary
+T9790 5055:587.127    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00000900 if necessary
+T9790 5055:587.154    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00000A00 if necessary
+T9790 5055:587.170    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00000B00 if necessary
+T9790 5055:587.186    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00000C00 if necessary
+T9790 5055:587.202    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00000D00 if necessary
+T9790 5055:587.218    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00000E00 if necessary
+T9790 5055:587.235    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00000F00 if necessary
+T9790 5055:587.251    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00001000 if necessary
+T9790 5055:587.266    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00001100 if necessary
+T9790 5055:587.282    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00001200 if necessary
+T9790 5055:587.298    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00001300 if necessary
+T9790 5055:587.314    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00001400 if necessary
+T9790 5055:587.329    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00001500 if necessary
+T9790 5055:587.345    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00001600 if necessary
+T9790 5055:587.360    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00001700 if necessary
+T9790 5055:587.376    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00001800 if necessary
+T9790 5055:587.391    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00001900 if necessary
+T9790 5055:587.424    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00001A00 if necessary
+T9790 5055:587.441    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00001B00 if necessary
+T9790 5055:587.457    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00001C00 if necessary
+T9790 5055:587.566    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00001D00 if necessary
+T9790 5055:587.583    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00001E00 if necessary
+T9790 5055:587.599    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00001F00 if necessary
+T9790 5055:587.616    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00002000 if necessary
+T9790 5055:587.632    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00002100 if necessary
+T9790 5055:587.649    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00002200 if necessary
+T9790 5055:587.665    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00002300 if necessary
+T9790 5055:587.682    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00002400 if necessary
+T9790 5055:587.700    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00002500 if necessary
+T9790 5055:587.717    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00002600 if necessary
+T9790 5055:587.733    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00002700 if necessary
+T9790 5055:587.749    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00002800 if necessary
+T9790 5055:587.766    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00002900 if necessary
+T9790 5055:587.785    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00002A00 if necessary
+T9790 5055:587.803    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00002B00 if necessary
+T9790 5055:587.822    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00002C00 if necessary
+T9790 5055:587.839    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00002D00 if necessary
+T9790 5055:587.855    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00002E00 if necessary
+T9790 5055:587.871    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00002F00 if necessary
+T9790 5055:587.887    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00003000 if necessary
+T9790 5055:587.904    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00003100 if necessary
+T9790 5055:587.921    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00003200 if necessary
+T9790 5055:587.938    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00003300 if necessary
+T9790 5055:587.955    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00003400 if necessary
+T9790 5055:587.971    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00003500 if necessary
+T9790 5055:587.989    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00003600 if necessary
+T9790 5055:588.006    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00003700 if necessary
+T9790 5055:588.023    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00003800 if necessary
+T9790 5055:588.040    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00003900 if necessary
+T9790 5055:588.057    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00003A00 if necessary
+T9790 5055:588.074    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00003B00 if necessary
+T9790 5055:588.091    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00003C00 if necessary
+T9790 5055:588.108    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00003D00 if necessary
+T9790 5055:588.178    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00003E00 if necessary
+T9790 5055:588.204    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00003F00 if necessary
+T9790 5055:588.262    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00004000 if necessary
+T9790 5055:588.282    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00004100 if necessary
+T9790 5055:588.300    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00004200 if necessary
+T9790 5055:588.317    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00004300 if necessary
+T9790 5055:588.333    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00004400 if necessary
+T9790 5055:588.351    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00004500 if necessary
+T9790 5055:588.411    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00004600 if necessary
+T9790 5055:588.428    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00004700 if necessary
+T9790 5055:588.447    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00004800 if necessary
+T9790 5055:588.463    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00004900 if necessary
+T9790 5055:588.479    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00004A00 if necessary
+T9790 5055:588.521    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00004B00 if necessary
+T9790 5055:588.559    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00004C00 if necessary
+T9790 5055:588.586    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00004D00 if necessary
+T9790 5055:588.604    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00004E00 if necessary
+T9790 5055:588.620    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00004F00 if necessary
+T9790 5055:588.907    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00005000 if necessary
+T9790 5055:589.033    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00005100 if necessary
+T9790 5055:589.052    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00005200 if necessary
+T9790 5055:589.071    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00005300 if necessary
+T9790 5055:589.088    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00005400 if necessary
+T9790 5055:589.106    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00005500 if necessary
+T9790 5055:589.220    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00005600 if necessary
+T9790 5055:589.239    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00005700 if necessary
+T9790 5055:589.256    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00005800 if necessary
+T9790 5055:589.300    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00005900 if necessary
+T9790 5055:589.318    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00005A00 if necessary
+T9790 5055:589.336    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00005B00 if necessary
+T9790 5055:589.355    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00005C00 if necessary
+T9790 5055:589.379    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00005D00 if necessary
+T9790 5055:589.396    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00005E00 if necessary
+T9790 5055:589.414    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00005F00 if necessary
+T9790 5055:589.431    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00006000 if necessary
+T9790 5055:589.449    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00006100 if necessary
+T9790 5055:589.467    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00006200 if necessary
+T9790 5055:589.576    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00006300 if necessary
+T9790 5055:589.593    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00006400 if necessary
+T9790 5055:589.612    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00006500 if necessary
+T9790 5055:589.630    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00006600 if necessary
+T9790 5055:589.649    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00006700 if necessary
+T9790 5055:589.669    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00006800 if necessary
+T9790 5055:589.688    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00006900 if necessary
+T9790 5055:589.706    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00006A00 if necessary
+T9790 5055:589.750    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00006B00 if necessary
+T9790 5055:589.774    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00006C00 if necessary
+T9790 5055:589.795    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00006D00 if necessary
+T9790 5055:589.815    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00006E00 if necessary
+T9790 5055:589.839    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00006F00 if necessary
+T9790 5055:589.927    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00007000 if necessary
+T9790 5055:589.976    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00007100 if necessary
+T9790 5055:590.055    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00007200 if necessary
+T9790 5055:590.079    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00007300 if necessary
+T9790 5055:590.097    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00007400 if necessary
+T9790 5055:590.116    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00007500 if necessary
+T9790 5055:590.133    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00007600 if necessary
+T9790 5055:590.149    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00007700 if necessary
+T9790 5055:590.166    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00007800 if necessary
+T9790 5055:590.183    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00007900 if necessary
+T9790 5055:590.201    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00007A00 if necessary
+T9790 5055:590.218    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00007B00 if necessary
+T9790 5055:590.235    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00007C00 if necessary
+T9790 5055:590.253    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00007D00 if necessary
+T9790 5055:590.390    -- End of determining dirty areas
+T9790 5055:590.404    -- Start of preparing flash programming
+T9790 5055:590.417    -- Calculating RAM usage
+T9790 5055:590.442    -- RAM usage = 3908 Bytes
+T9790 5055:590.454    -- Preserving CPU registers
+T9790 5055:590.489    -- Preparing target
+T9790 5055:590.502    -- Preserving target RAM temporarily used for programming
+T9790 5055:611.775    -- Downloading RAMCode
+T9790 5055:629.857    -- Preparing RAMCode
+T9790 5055:636.961    -- End of preparing flash programming
+T9790 5055:650.039    -- CPU speed could not be measured.
+T9790 5055:650.087    -- Start of comparing flash
+T9790 5055:650.099    -- CRC check was estimated as fastest method
+T9790 5055:729.497    -- Comparing range 0x0000 - 0x7DFF (126 Sectors, 31 KB), using multi-block CRC calculation
+T9790 5055:765.372    -- CRC does not match for sector 124
+T9790 5055:765.860    -- Comparing range 0x0000 - 0x7BFF (124 Sectors, 31 KB), using alternative multi-block CRC calculation
+T9790 5055:799.524    -- All CRCs match
+T9790 5055:805.859    -- Comparing range 0x7D00 - 0x7DFF (1 Sector, 256 Bytes), using alternative multi-block CRC calculation
+T9790 5055:817.004    -- All CRCs match
+T9790 5055:817.047    -- End of comparing flash
+T9790 5055:817.115    -- Start of erasing sectors
+T9790 5055:817.130    -- Erasing range 0x00007C00 - 0x00007CFF (  1 Sector, 256 Bytes)
+T9790 5055:838.399    -- End of erasing sectors
+T9790 5055:838.457    -- Start of flash programming
+T9790 5055:838.480    -- Programming range 0x00007C00 - 0x00007CFF (  1 Sector, 256 Bytes)
+T9790 5055:843.715    -- End of flash programming
+T9790 5055:843.772    -- 0x7C00 - 0x7CFF (  1 Sector, 256 Bytes)
+T9790 5055:843.796    -- Start of restoring
+T9790 5055:843.816    -- Restoring RAMCode
+T9790 5055:863.868    -- Restoring target memory
+T9790 5055:884.191    -- Restore target
+T9790 5055:884.233    -- Restoring CPU registers
+T9790 5055:884.256    -- End of restoring
+T9790 5055:884.315    -- Bank 0 @ 0x00000000: 1 range affected (256 bytes)
+T9790 5055:884.333    -- Total: 0.293s (Prepare: 0.059s, Compare: 0.167s, Erase: 0.021s, Program & Verify: 0.014s, Restore: 0.030s)
+T9790 5055:884.349    -- Program & Verify speed: 18 KB/s
+T9790 5055:903.647 - 318.650ms returns 256 (0x100)
+T9790 5055:904.154 JLINK_ResetPullsRESET(ON)
+T9790 5055:904.188 - 0.034ms
+T9790 5055:904.204 JLINK_ResetNoHalt()
+T9790 5055:904.925   InitTarget() start
+T9790 5055:904.951    J-Link Script File: Executing InitTarget()
+T9790 5055:904.976   InitTarget()
+T9790 5055:910.178   InitTarget() end - Took 5.16ms
+T9790 5055:911.422   Found SW-DP with ID 0x0BC11477
+T9790 5055:915.548   DPIDR: 0x0BC11477
+T9790 5055:915.584   CoreSight SoC-400 or earlier
+T9790 5055:915.604   AP map detection skipped. Manually configured AP map found.
+T9790 5055:915.621   AP[0]: AHB-AP (IDR: Not set)
+T9790 5055:917.236   AP[0]: Core found
+T9790 5055:917.281   AP[0]: AHB-AP ROM base: 0x41003000
+T9790 5055:918.215   CPUID register: 0x410CC601. Implementer code: 0x41 (ARM)
+T9790 5055:918.247   Found Cortex-M0 r0p1, Little endian.
+T9790 5055:918.805   -- Max. mem block: 0x000027A8
+T9790 5055:918.832   CPU_ReadMem(4 bytes @ 0xE000EDF0)
+T9790 5055:919.437   CPU_ReadMem(4 bytes @ 0xE0002000)
+T9790 5055:920.104   FPUnit: 4 code (BP) slots and 0 literal slots
+T9790 5055:920.115   CPU_ReadMem(4 bytes @ 0xE000EDFC)
+T9790 5055:920.752   CPU_ReadMem(4 bytes @ 0xE0001000)
+T9790 5055:921.485   CoreSight components:
+T9790 5055:921.507   ROMTbl[0] @ 41003000
+T9790 5055:921.516   CPU_ReadMem(64 bytes @ 0x41003000)
+T9790 5055:922.483   CPU_ReadMem(32 bytes @ 0xE00FFFE0)
+T9790 5055:923.399   [0][0]: E00FF000 CID B105100D PID 000BB4C0 ROM Table
+T9790 5055:923.419   ROMTbl[1] @ E00FF000
+T9790 5055:923.428   CPU_ReadMem(64 bytes @ 0xE00FF000)
+T9790 5055:924.630   CPU_ReadMem(32 bytes @ 0xE000EFE0)
+T9790 5055:925.493   [1][0]: E000E000 CID B105E00D PID 000BB008 SCS
+T9790 5055:925.507   CPU_ReadMem(32 bytes @ 0xE0001FE0)
+T9790 5055:926.470   [1][1]: E0001000 CID B105E00D PID 000BB00A DWT
+T9790 5055:926.544   CPU_ReadMem(32 bytes @ 0xE0002FE0)
+T9790 5055:927.356   [1][2]: E0002000 CID B105E00D PID 000BB00B FPB
+T9790 5055:927.374   CPU_ReadMem(32 bytes @ 0x41006FE0)
+T9790 5055:928.220   [0][1]: 41006000 CID B105900D PID 001BB932 MTB-M0+
+T9790 5055:928.240   JLINK_Reset()
+T9790 5055:928.248     CPU_ReadMem(4 bytes @ 0x20000000)
+T9790 5055:928.892     CPU_WriteMem(4 bytes @ 0x20000000)
+T9790 5055:929.741     ResetTarget() start
+T9790 5055:929.770      J-Link Script File: Executing ResetTarget()
+T9790 5055:930.477     CPU_ReadMem(4 bytes @ 0xE000EDFC)
+T9790 5055:931.239     CPU_WriteMem(4 bytes @ 0xE000EDFC)
+T9790 5055:932.010     CPU_WriteMem(4 bytes @ 0xE000ED0C)
+T9790 5055:934.778     CPU_ReadMem(4 bytes @ 0xE000EDF0)
+T9790 5055:935.476     CPU_ReadMem(4 bytes @ 0x41002100)
+T9790 5055:936.168     CPU_WriteMem(4 bytes @ 0xE000EDFC)
+T9790 5055:937.080     ResetTarget() end - Took 7.23ms
+T9790 5055:941.624     CPU_WriteMem(4 bytes @ 0xE0002000)
+T9790 5055:942.330     CPU_ReadMem(4 bytes @ 0xE000EDFC)
+T9790 5055:942.980     CPU_ReadMem(4 bytes @ 0xE0001000)
+T9790 5055:943.671     CPU_WriteMem(4 bytes @ 0xE0001000)
+T9790 5055:944.314   - 16.074ms
+T9790 5055:944.331   JLINK_Go()
+T9790 5055:944.351     CPU_ReadMem(4 bytes @ 0xE0001000)
+T9790 5055:944.956     CPU_WriteMem(4 bytes @ 0xE0001000)
+T9790 5055:945.689     CPU_WriteMem(4 bytes @ 0xE0001004)
+T9790 5055:947.265     Memory map 'after startup completion point' is active
+T9790 5055:947.284   - 2.953ms
+T9790 5055:947.292 - 43.088ms
+T9790 5055:947.619 JLINK_Close()
+T9790 5055:971.423 - 23.802ms
+T9790 5055:971.450   
+T9790 5055:971.456   Closed

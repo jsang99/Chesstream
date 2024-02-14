@@ -1,0 +1,9 @@
+T9790 5056:135.169   SEGGER J-Link V7.94a Log File
+T9790 5056:135.312   DLL Compiled: Dec  6 2023 16:01:39
+T9790 5056:135.334   Logging started @ 2023-12-17 03:54
+T9790 5056:135.351   Process: C:\Program Files (x86)\Atmel\Studio\7.0\atbackend\atbackend.exe
+T9790 5056:135.374 - 75.842ms
+T9790 5056:145.354 JLINK_Close()
+T9790 5056:155.243 - 9.886ms
+T9790 5056:155.379   
+T9790 5056:155.428   Closed

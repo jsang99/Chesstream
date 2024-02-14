@@ -45,7 +45,7 @@ The OLED Display provides the player with a quick summary of what move has been 
 ## 4. Project Links
 Provide a URL to your Node-RED instance for our review (make sure it’s running on your Azure instance!)
 Provide the share link to your final PCBA on Altium 365.
-* NodeRed Instance (Link no longer works due to server shutdown :/)[link](http://172.203.132.103:1880/#flow/6876b6f51a74c211)
+* NodeRed Instance (Link no longer works due to server shutdown :/) [link](http://172.203.132.103:1880/#flow/6876b6f51a74c211)
 * Main Board PCBA Alitum365 [link](https://365.altium.com/files/D4E06251-FFA3-47C6-89CF-CEFF8A098985)
 * Quater Module PCBA Altium365 [link](https://365.altium.com/files/D596A9AF-ADFE-4079-915E-C864F213AB50)
 

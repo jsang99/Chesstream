@@ -1,4 +1,3 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/-ZR3sVSa)
 # Chesstream
 
     * Team Number: 2
@@ -8,6 +7,8 @@
        * Developed on Mac and Windows with Altium + Atmel Studio + VSCode
        * Tested on SAMW25
        * Deployed on SAMD21G18 + WINC1500
+
+<img src="https://github.com/jsang99/Chesstream/assets/60195598/b5e20076-c7f9-47c5-ba45-d0afed46c3d1" alt="drawing" style="width:600px;"/>
 
 # Video Presentation
 You can find our video presentation linked [here](https://youtu.be/DB6ynQ7qNNc).

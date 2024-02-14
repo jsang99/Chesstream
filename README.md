@@ -8,8 +8,8 @@
        * Tested on SAMW25
        * Deployed on SAMD21G18 + WINC1500
 
-<img src="https://github.com/jsang99/Chesstream/assets/60195598/b5e20076-c7f9-47c5-ba45-d0afed46c3d1" alt="drawing" style="width:600px;"/>
-
+<img src="https://github.com/jsang99/Chesstream/assets/60195598/b5e20076-c7f9-47c5-ba45-d0afed46c3d1" alt="drawing" style="width:500px;"/>
+<img src="https://github.com/jsang99/Chesstream/assets/60195598/f6671873-42a7-4bb6-9b35-502fa2840496" alt="drawing" style="width:500px;"/>
 # Video Presentation
 You can find our video presentation linked [here](https://youtu.be/DB6ynQ7qNNc).
 

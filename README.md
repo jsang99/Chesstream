@@ -45,9 +45,9 @@ The OLED Display provides the player with a quick summary of what move has been 
 ## 4. Project Links
 Provide a URL to your Node-RED instance for our review (make sure it’s running on your Azure instance!)
 Provide the share link to your final PCBA on Altium 365.
-* NodeRed Instance [link](http://172.203.132.103:1880/#flow/6876b6f51a74c211)
-* Main Board PCBA Alitum365 [link](https://upenn-eselabs.365.altium.com/designs/53B88DD0-F2D4-479A-9F7E-95B836AD9149#design)
-* Quater Module PCBA Altium365 [link](https://upenn-eselabs.365.altium.com/designs/FA8CA823-78A7-477A-A426-D04964688AD7#design)
+* NodeRed Instance (Link no longer works due to server shutdown :/)[link](http://172.203.132.103:1880/#flow/6876b6f51a74c211)
+* Main Board PCBA Alitum365 [link](https://365.altium.com/files/D4E06251-FFA3-47C6-89CF-CEFF8A098985)
+* Quater Module PCBA Altium365 [link](https://365.altium.com/files/D596A9AF-ADFE-4079-915E-C864F213AB50)
 
 ## 5. Challenges
 Where did you face difficulties? This could be in firmware, hardware, software, integration, etc.

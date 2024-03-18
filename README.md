@@ -2,7 +2,7 @@
 
     * Team Number: 2
     * Team Name: Chesstream
-    * Team Members: Victor Gao
+    * Team Members: Victor Gao Kevin Sang
     * Description of test hardware: 
        * Developed on Mac and Windows with Altium + Atmel Studio + VSCode
        * Tested on SAMW25
